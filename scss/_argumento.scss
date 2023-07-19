@@ -1,0 +1,104 @@
+/* MIXINS */
+/* Mixins sin parametros */
+@mixin arguImgMainMix{
+    grid-area: mainImg;
+    display: grid;
+    background-image: url(../imagenes/imagen13.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@mixin arguTextMainMix{
+    grid-area: main;
+}
+@mixin arguImgSectionMix{
+    grid-area: sectionImg;
+    display: grid;
+    background-image: url(../imagenes/imagen11.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@mixin arguSectionMix{
+    grid-area: section;
+}
+
+.contenedorTotalA{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1.5fr 0.5fr 0.2fr;
+    grid-template-areas: 
+    "header header"
+    "main mainImg"
+    "section sectionImg"
+    "correo correo"
+    "footer footer"
+}
+.arguImgMain{
+    @include arguImgMainMix;
+    background-size:cover;
+    width: 500px;
+    height: 300px;
+    margin: 30px 10px;
+}
+.arguTextMain{
+    @include arguTextMainMix;
+    margin: 10px;
+}
+.arguImgSection{
+    @include arguImgSectionMix;
+    background-size:cover;
+    width: 500px;
+    height: 300px;
+    margin: 30px 10px;
+}
+.arguSection{
+    @include arguSectionMix;
+    margin: 10px;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 425px){
+    
+    .contenedorTotalA{
+        display: grid;
+        font-size: 15px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.9fr 0.1fr 0.7fr 0.1fr 0.2fr 0.1fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "mainImg"
+        "section"
+        "sectionImg"
+        "correo"
+        "footer"
+    }
+    
+    .arguImgMain{
+        @include arguImgMainMix;
+        background-size: contain;
+        height: 270px;
+        width: 335px;
+    }
+    .arguTextMain{
+        @include arguTextMainMix;
+    }
+    .arguTitulo{
+        padding: 10px;
+    }
+    .arguImgSection{
+        @include arguImgSectionMix;
+        background-size: contain;
+        height: 270px;
+        width: 335px;
+    }
+    .arguSection{
+        @include arguSectionMix;
+        overflow: scroll;
+        height:750px;
+        width:335px;
+    }
+    .tempoTitulo{
+        padding: 10px;
+    }
+}

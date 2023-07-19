@@ -1,0 +1,126 @@
+/* MIXINS */
+/* Mixins sin parametros */
+@mixin produccionImgMainMix{
+    grid-area: main;
+    display: grid;
+    background-image: url(../imagenes/516547.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin sectionTextMix{
+    grid-area: section;
+    margin: 10px;
+}
+@mixin articleImgBandaMix{
+    grid-area: articleImg;
+    display: grid;
+    background-image: url(../imagenes/imagen8.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin articleTextBandaMix{
+    grid-area: article;
+    margin: 10px;
+}
+@mixin articleImgPremiosMix{
+    grid-area: articleImg2;
+    display: grid;
+    background-image: url(../imagenes/imagen7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin articleTextPremiosMix{
+    grid-area: article2;
+    margin: 10px;
+}
+
+.contenedorTotalP{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.2fr 2fr 1.2fr 1.5fr 1.3fr 0.6fr 0.2fr;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "section section"
+    "article articleImg"
+    "article2 articleImg2"
+    "correo correo"
+    "footer footer"
+}
+
+.produccionImgMain{
+    @include produccionImgMainMix;
+}
+.sectionText{
+    @include sectionTextMix;
+}
+.articleImgBanda{
+    @include articleImgBandaMix;
+    width: 500px;
+    height: 300px;
+    margin: 30px 10px;
+}
+.articleTextBanda{
+    @include articleTextBandaMix;
+}
+.articleImgPremios{
+    @include articleImgPremiosMix;
+    width: 500px;
+    height: 300px;
+    margin: 30px 10px;
+}
+.articleTextPremios{
+    @include articleTextPremiosMix;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 425px){
+    
+    .contenedorTotalP{
+        display: grid;
+        font-size: 15px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.3fr 0.8fr 0.3fr 0.8fr 0.3fr 0.1fr 0.1fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "section"
+        "articleImg"
+        "article"
+        "articleImg2"
+        "article2"
+        "correo"
+        "footer"
+    }
+    
+    .produccionImgMain{
+        @include produccionImgMainMix;
+        background-size:contain;
+        height: 250px;
+    }
+    .sectionText{
+        @include sectionTextMix;
+    }
+    .articleImgBanda{
+        @include articleImgBandaMix;
+        background-size:contain;
+        height: 250px;
+        width: 335px;
+    }
+    .articleTextBanda{
+        @include articleTextBandaMix;
+    }
+    .articleImgPremios{
+        @include articleImgPremiosMix;
+        background-size:contain;
+        height: 250px;
+        width: 335px;
+    }
+    .articleTextPremios{
+        @include articleTextPremiosMix;
+    }
+}
