@@ -24,12 +24,11 @@
         display: grid;
         font-size: 15px;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.7fr 0.3fr 1.8fr 0.1fr 0.1fr;
+        grid-template-rows: 0.7fr 0.3fr 1.8fr 0.1fr;
         grid-template-areas: 
         "header"
         "main"
         "section"
-        "article"
         "footer"
     }
 

@@ -622,5 +622,31 @@ nav a {
     margin: 10px;
   }
 }
+/* MIXINS */
+/* Mixins sin parametros */
+.contenedorGame {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.4fr 1fr 2fr 0.2fr;
+  grid-template-areas: "header header" "main main" "section section" "footer footer";
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Media queries */
+@media screen and (max-width: 425px) {
+  .contenedorGame {
+    display: grid;
+    font-size: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 0.3fr 1.8fr 0.1fr;
+    grid-template-areas: "header" "main" "section" "footer";
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
