@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of Thrones Fandome Web Site</title>
-
+    
     <link rel="shortcut icon" href="../imagenes/favi.png" type="image/x-icon">
-
+    
     <link rel="stylesheet" href="../css/styles.css">
-
-    <script src="../script.js"></script>
-
+    
+    
     <!-- Meta description -->
     <meta name="description" content="El mejor blog de Game Of Thrones hecho por un fan dedicado a otros fans">
-
+    
     <!-- Keywords -->
     <meta name="keywords" content="game of thrones, blog game of thrones, fandom game of thrones. ">
 </head>
@@ -41,17 +40,55 @@
                 </ul>
             </nav>
         </header>
+        
+        <main class="mainGame">
+            <h1>TRIVIA DE GAME OF THRONES</h1>
+            
+            <!-- Pantalla inicial -->
+            <div class="pantalla-inicial" id="pantalla-inicial">
+                <p>Demuestra cuánto sabes de Juego de Tronos con este trivial de la serie.</p>
+                <button class="btn" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
+            </div>
 
+            <!--Pantalla juego-->
+            <div class="pantalla-juego" id="pantalla-juego">
+                <p id="preguntaX">¿Listo para empezar?</p>
+                <div class="opciones">
+                    <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
+                        <div class="letra" id="l0">A</div>
+                        <div class="nombre" id="n0">OPCION A</div>
+                    </div>
+                    
+                    <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
+                        <div class="letra" id="l1">B</div>
+                        <div class="nombre" id="n1">OPCION B</div>
+                    </div>
+                    
+                    <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
+                        <div class="letra" id="l2">C</div>
+                        <div class="nombre" id="n2">OPCION C</div>
+                    </div>
+                </div>
+            </div>
+            <!--Pantalla final-->
+            <div class="pantalla-final" id="pantalla-final">
+                <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
+                <h2>INCORRECTAS: <span id="numInCorrectas">2</span></h2>
+                <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
+            </div>
+        </main>
+        
         <footer class="footer">
             <a href="#arriba">Ir arriba</a>
-
+            
             <h5 class="social">Redes sociales</h5>
             <a href="https://www.facebook.com/" class="social">Facebook</a>
             <a href="https://www.instagram.com.ar" class="social">Instagram</a>
         </footer>
 
     </div>
-
+    
+    <script src="../script.js"></script>
 </body>
 
 </html>
